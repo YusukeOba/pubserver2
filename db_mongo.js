@@ -73,9 +73,10 @@ class DB {
       .then((a)=> {
         return Promise.all(a.map((e) => {
           return this.find_one_book(e.book_id, book_options).then((book)=> {
-            e.title = book.title;
-            e.authors = book.authors.map((a)=> a.last_name + ' ' + a.first_name)
-            return e;
+//            e.title = book.title;
+//            e.authors = book.authors.map((a)=> a.last_name + ' ' + a.first_name)
+//            return e;
+            return book;
           });
         }));
       });
